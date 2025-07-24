@@ -2,10 +2,10 @@
 
 // ----- SOZLAMALAR -----
 // 1. Bot Otasidan (BotFather) olingan noyob tokenni shu yerga qo'ying.
-define('BOT_TOKEN', 'SIZNING_BOT_TOKENINGIZ'); 
+define('BOT_TOKEN', '8393546109:AAEFLRWIgmnbFVQd_i5N69giiCH1J4RJ7P0'); 
 
 // 2. Veb-ilovangiz joylashgan URL manzilni kiriting.
-define('WEB_APP_URL', 'https://sizning-domeningiz.uz/path/to/your/index.html');
+define('WEB_APP_URL', 'https://mixalgo.github.io/WebBot/');
 
 // Telegram API manzili
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
