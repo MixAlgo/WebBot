@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Capital - Forex va Algotrading</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@0.294.0/dist/lucide.min.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <!-- BU YERGA O'ZINGIZNI LOGOTIPINGIZNI QO'YING (150x40px) -->
+                <img src="logo.png" alt="Mix Capital Logo">
+            </a>
+            <nav class="main-nav" id="main-nav">
+                <a href="#products">Mahsulotlar</a>
+                <a href="#calculator">Kalkulyator</a>
+                <a href="#team">Jamoa</a>
+                <a href="#brokers">Brokerlar</a>
+            </nav>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Moliyaviy erkinlikka <br>Daromadga biz bilan erishing</h1>
+                <p class="subtitle">Mix Capital bilan professional treyderga aylaning va sarmoyangizni avtomatik tarzda ko'paytiring.</p>
+                <a href="#products" class="btn btn-primary">Boshlash</a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <h2 class="section-title">Bizning Mahsulotlar</h2>
+                <div class="products-grid">
+                    <!-- Product 1: Courses -->
+                    <div class="card">
+                        <img src="kurs.jpg" alt="Forex kurslari" class="card-img">
+                        <div class="card-body">
+                            <h3>Forex Kurslari (Onlayn/Offlayn)</h3>
+                            <p>0 dan professional darajagacha bo'lgan to'liq kurslar. Mentor Shuhratbek bilan bozor analizini o'rganing.</p>
+                            <button class="btn btn-secondary" data-modal-target="#modal-kurs">Batafsil</button>
+                        </div>
+                    </div>
+                    <!-- Product 2: Trading Robot -->
+                    <div class="card">
+                        <img src="robot.png" alt="Savdo Roboti" class="card-img">
+                        <div class="card-body">
+                            <h3>"Mix Capital X" Savdo Roboti</h3>
+                            <p>Sizning sarmoyangiz uchun barqaror daromad. Oyiga o'rtacha 10% foyda keltiruvchi to'liq avtomatlashgan tizim.</p>
+                            <button class="btn btn-secondary" data-modal-target="#modal-robot">Batafsil</button>
+                        </div>
+                    </div>
+                    <!-- Product 3: Scalping Indicator -->
+                    <div class="card">
+                        <img src="indikator.png" alt="Scalping Indikatori" class="card-img">
+                        <div class="card-body">
+                            <h3>TradingView uchun Indikator</h3>
+                            <p>Qisqa muddatli savdolar (scalping) uchun mo'ljallangan, yuqori aniqlikdagi maxsus indikator.</p>
+                            <button class="btn btn-secondary" data-modal-target="#modal-indikator">Batafsil</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="section calculator-section">
+            <div class="container">
+                <h2 class="section-title">"Mix Capital X" Daromad Kalkulyatori</h2>
+                <p class="section-subtitle">Sarmoyangiz qanday o'sishini reinvetsitsiya va qo'shimcha depozitlar bilan hisoblab ko'ring.</p>
+                <div class="calculator-wrapper">
+                    <div class="calculator-form">
+                        <form id="profit-calculator">
+                            <div class="form-group">
+                                <label for="initial-deposit">Boshlang'ich depozit ($)</label>
+                                <input type="number" id="initial-deposit" value="1000" min="100" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="monthly-deposit">Oylik qo'shimcha sarmoya ($)</label>
+                                <input type="number" id="monthly-deposit" value="200" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">Muddati (oy)</label>
+                                <input type="number" id="duration" value="12" min="1" max="60" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="monthly-profit">Oylik daromad (%)</label>
+                                <input type="number" id="monthly-profit" value="10" min="1" max="50" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Hisoblash</button>
+                        </form>
+                    </div>
+                    <div class="calculator-results">
+                        <div id="results-output">
+                            <p>Hisoblash uchun ma'lumotlarni kiriting.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="section">
+            <div class="container">
+                <h2 class="section-title">Bizning Jamoa</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://placehold.co/200x200/7d5fff/ffffff?text=Murodjon+H." alt="Murodjon Hoshimov" class="team-photo">
+                        <h4>Murodjon Hoshimov</h4>
+                        <p>Brend asoschisi</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://placehold.co/200x200/1e90ff/ffffff?text=Shuhratbek" alt="Shuhratbek" class="team-photo">
+                        <h4>Shuhratbek</h4>
+                        <p>Analitik va Mentor</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://placehold.co/200x200/2ed573/ffffff?text=Azizbek" alt="Azizbek" class="team-photo">
+                        <h4>Azizbek</h4>
+                        <p>Algotrader va Dasturchi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brokers Section -->
+        <section id="brokers" class="section brokers-section">
+            <div class="container">
+                <h2 class="section-title">Biz Tavsiya Qiladigan Brokerlar</h2>
+                <div class="brokers-grid">
+                    <a href="https://my.roboforex.pro/uz/?a=upue" target="_blank" class="broker-logo"><img src="https://placehold.co/200x80/ffffff/1a1a2e?text=RoboForex" alt="RoboForex"></a>
+                    <a href="https://one.exnesstrack.org/a/02c3r6umav" target="_blank" class="broker-logo"><img src="https://placehold.co/200x80/ffffff/1a1a2e?text=Exness" alt="Exness"></a>
+                    <a href="https://affs.click/kYp8N" target="_blank" class="broker-logo"><img src="https://placehold.co/200x80/ffffff/1a1a2e?text=XM" alt="XM"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mix Capital. Barcha huquqlar himoyalangan.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="send"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+                <a href="#"><i data-lucide="youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="overlay"></div>
+
+    <!-- Kurslar Modali -->
+    <div class="modal" id="modal-kurs">
+        <div class="modal-header">
+            <h3>Forex Kurslari</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Narxi:</strong> 500$ (Offlayn), 300$ (Onlayn)</p>
+            <p>Bizning kurslarimiz sizni 0 dan boshlab Forex bozorining professional ishtirokchisiga aylantiradi. Darslar mentor Shuhratbek tomonidan olib boriladi.</p>
+            <h4>Kurs dasturi:</h4>
+            <ul>
+                <li>Texnik analiz</li>
+                <li>Fundamental analiz</li>
+                <li>Risk menejment</li>
+                <li>Savdo psixologiyasi</li>
+            </ul>
+            <h4>Natijalar (Skrinshotlar):</h4>
+            <img src="https://placehold.co/500x300/1e90ff/ffffff?text=Kurs+Natijalari" alt="Kurs natijalari" style="width:100%; border-radius: 8px; margin-top: 10px;">
+             <a href="#" class="btn btn-primary" style="margin-top: 20px; width: 100%; text-align:center;">Kursga yozilish</a>
+        </div>
+    </div>
+
+    <!-- Robot Modali -->
+    <div class="modal" id="modal-robot">
+        <div class="modal-header">
+            <h3>"Mix Capital X" Savdo Roboti</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Narxi:</strong> 1000$ (Umrbod litsenziya)</p>
+            <p>Bu robot siz uchun 24/7 ishlaydi va sarmoyangizni barqaror o'sishini ta'minlaydi. O'rnatish va sozlashda dasturchimiz Azizbek yordam beradi.</p>
+            <h4>Afzalliklari:</h4>
+            <ul>
+                <li>To'liq avtomatlashgan</li>
+                <li>Oyiga o'rtacha 10% daromad</li>
+                <li>Minimal risk bilan ishlaydi</li>
+                <li>Barcha hisob turlariga mos keladi</li>
+            </ul>
+            <h4>Natijalar (Skrinshotlar):</h4>
+            <img src="https://placehold.co/500x300/2ed573/ffffff?text=Robot+Natijalari" alt="Robot natijalari" style="width:100%; border-radius: 8px; margin-top: 10px;">
+            <a href="#" class="btn btn-primary" style="margin-top: 20px; width: 100%; text-align:center;">Robotni sotib olish</a>
+        </div>
+    </div>
+
+    <!-- Indikator Modali -->
+    <div class="modal" id="modal-indikator">
+        <div class="modal-header">
+            <h3>TradingView uchun Indikator</h3>
+            <button class="close-modal-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Narxi:</strong> 250$</p>
+            <p>Scalping strategiyasi uchun maxsus ishlab chiqilgan bu indikator sizga bozorga kirish uchun aniq signallarni beradi.</p>
+            <h4>Xususiyatlari:</h4>
+            <ul>
+                <li>Yuqori aniqlikdagi signallar</li>
+                <li>Barcha valyuta juftliklarida ishlaydi</li>
+                <li>O'rnatish oson</li>
+                <li>Sodda va tushunarli interfeys</li>
+            </ul>
+            <h4>Natijalar (Skrinshotlar):</h4>
+            <img src="https://placehold.co/500x300/ff4757/ffffff?text=Indikator+Natijalari" alt="Indikator natijalari" style="width:100%; border-radius: 8px; margin-top: 10px;">
+            <a href="#" class="btn btn-primary" style="margin-top: 20px; width: 100%; text-align:center;">Indikator sotib olish</a>
+        </div>
+    </div>
+
+
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

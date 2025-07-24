@@ -1,0 +1,442 @@
+/* CSS Variables */
+:root {
+    --bg-dark: #0F0F1B;
+    --bg-light: #1A1A2E;
+    --primary-color: #1E90FF; /* Dodger Blue */
+    --secondary-color: #2ED573; /* Green */
+    --text-light: #F0F0F0;
+    --text-dark: #A0A0B0;
+    --border-color: #2a2a4a;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.section-subtitle, .subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+/* Header */
+.header {
+    background-color: rgba(15, 15, 27, 0.8);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(15, 15, 27, 0.7), rgba(15, 15, 27, 1)), url('https://placehold.co/1920x1080/0F0F1B/1a1a2e?text=Fon+Rasmi') no-repeat center center/cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Header balandligi uchun */
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(30, 144, 255, 0.3);
+}
+.btn-secondary {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    border: 1px solid var(--border-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-full {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Products Section */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.card-body h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.card-body p {
+    color: var(--text-dark);
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.card-body .btn {
+    width: 100%;
+    text-align: center;
+}
+
+/* Calculator Section */
+.calculator-section {
+    background-color: var(--bg-light);
+}
+.calculator-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background-color: var(--bg-dark);
+    padding: 30px;
+    border-radius: 12px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+.calculator-results {
+    background-color: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+}
+#results-output h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+#results-output p {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+#results-output p:last-child {
+    border-bottom: none;
+}
+#results-output span {
+    font-weight: 600;
+    color: var(--text-light);
+}
+#results-output .total-balance span {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Team Section */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.team-member {
+    text-align: center;
+}
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+}
+.team-member h4 {
+    font-size: 1.2rem;
+}
+
+/* Brokers Section */
+.brokers-section {
+    background-color: var(--bg-light);
+}
+.brokers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+.broker-logo img {
+    width: 100%;
+    height: auto;
+    max-height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.5);
+    transition: all 0.3s ease;
+}
+.broker-logo:hover img {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-light);
+    padding: 25px 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.footer p {
+    color: var(--text-dark);
+}
+.social-links a {
+    color: var(--text-dark);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: 0.2s ease-in-out;
+    border-radius: 12px;
+    z-index: 1010;
+    background-color: var(--bg-light);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+.modal-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+.modal-header h3 {
+    font-size: 1.3rem;
+}
+.close-modal-btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+.modal-body {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.modal-body ul {
+    list-style-position: inside;
+    padding-left: 5px;
+    margin: 10px 0;
+}
+.modal-body li {
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1005;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+/* Responsive Design */
+@media (min-width: 992px) {
+    .calculator-wrapper {
+        grid-template-columns: 1fr 1.2fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 65px; /* header height */
+        right: 0;
+        width: 100%;
+        background-color: var(--bg-light);
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-nav.active {
+        display: flex;
+    }
+    .main-nav a {
+        margin: 0;
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
